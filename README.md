@@ -1,4 +1,5 @@
-# ollama-stop-on-close README
+# Ollama Unload On Close
+
 Automatically unloads any loaded ollama models when VSCode is closed, with a few configurations.
 
 ## Requirements
@@ -14,4 +15,4 @@ Requires Ollama.
 
 ### 1.0.0
 
-Initial release of Ollama Stop on Close extension for VSCode.
+Initial release of Ollama Unload on Close extension for VSCode.
