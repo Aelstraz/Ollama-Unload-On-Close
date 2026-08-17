@@ -8,13 +8,18 @@ var loaded_models: Array<string> = [];
 const GET_COMMAND: string = 'ollama ps';
 const STOP_COMMAND: string = 'ollama stop ';
 
-export async function activate(): Promise<void> {
+export async function activate(context: vscode.ExtensionContext): Promise<void> {
 	const config = vscode.workspace.getConfiguration('ollama-stop-on-close');
 	const onlyCloseSessionModels: boolean = config.get<boolean>('onlyCloseSessionModels', true);
 
 	if (onlyCloseSessionModels) {
 		await get_loaded_models();
 	}
+
+	let disposable = vscode.commands.registerCommand('ollama-unload-on-close.unload-models', async () => {
+		await deactivate();
+	});
+	context.subscriptions.push(disposable);
 }
 
 export async function deactivate(): Promise<void> {

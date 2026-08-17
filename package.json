@@ -2,7 +2,7 @@
   "name": "ollama-unload-on-close",
   "displayName": "Ollama Unload On Close",
   "description": "Automatically stops/unloads any loaded models when vscode is closed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "Aelstraz",
   "engines": {
     "vscode": "^1.125.0"
@@ -15,11 +15,17 @@
   ],
   "repository": "https://github.com/aelstraz/ollama-unload-on-close.git",
   "contributes": {
+    "commands": [
+      {
+        "command": "ollama-unload-on-close.unload-models",
+        "title": "Ollama Unload On Close: Unload Models"
+      }
+    ],
     "configuration": {
       "properties": {
         "ollamaUnloadOnClose.onlyCloseSessionModels": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Will only unload models that have been loaded during this session"
         },
         "ollamaUnloadOnClose.ignoreModels": {
