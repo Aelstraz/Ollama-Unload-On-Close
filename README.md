@@ -13,6 +13,11 @@ Requires Ollama.
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.2
+
+Added command to unload models on demand.
+Changed the unload session models setting to be on by default
+
+### 0.0.1
 
 Initial release of Ollama Unload on Close extension for VSCode.
